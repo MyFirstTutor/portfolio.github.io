@@ -3,44 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhilai Tuition SaaS</title>
-    <!-- Security: Only allow scripts from this folder -->
+    <title>Architect Portfolio | Bhilai Tech</title>
+    <!-- Security: Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
+
     <header>
-        <h1>Bhilai Excellence Classes</h1>
+        <h1>Rahul Sahu | HTML Architect</h1>
+        <p>Building Secured SaaS for Bhilai's Future</p>
         <nav>
-            <a href="#attendance">Attendance</a> | <a href="#fees">Fees</a>
+            <a href="#skills">Skills</a> | 
+            <a href="#projects">SaaS Projects</a> | 
+            <a href="#contact">Hire Me</a>
         </nav>
     </header>
 
     <main>
-        <!-- Attendance Module -->
-        <section id="attendance">
-            <h2>Student Attendance</h2>
-            <input type="number" id="roll_no" placeholder="Roll No (01-15)" min="01" max="15">
-            <button onclick="markAttendance()">Mark Present</button>
-            <p id="att-status"></p>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Architect Skills</h2>
+            <ul>
+                <li>Semantic Architecture (SEO Ready)</li>
+                <li>Bound-Checked Logic (Zero-Failure)</li>
+                <li>3G Data Optimization (PWA Expert)</li>
+            </ul>
         </section>
 
-        <!-- FinTech Fee Module -->
-        <section id="fees">
-            <h2>Fee Calculator</h2>
-            <input type="number" id="months" placeholder="Months (1-4)" min="1" max="4">
-            <button onclick="calculateFees()">Calculate Total</button>
-            <p id="fee-result"></p>
+        <!-- Projects Section: Live SaaS Demos -->
+        <section id="projects">
+            <h2>SaaS Project Demos</h2>
+            
+            <!-- Project 1: FinTech (Smart Meter) -->
+            <article>
+                <h3>1. Smart Meter Recharge (FinTech)</h3>
+                <p>Relevance: CSEB Bhilai Billing.</p>
+                <div class="demo-box">
+                    <input type="number" id="units" placeholder="Enter Units" min="1" max="5000">
+                    <button onclick="calcBill()">Calculate Bill</button>
+                    <p id="bill-out"></p>
+                </div>
+            </article>
+
+            <!-- Project 2: EdTech (Tuition SaaS) -->
+            <article>
+                <h3>2. Tuition Attendance (EdTech)</h3>
+                <p>Relevance: Local Coaching Centers.</p>
+                <div class="demo-box">
+                    <input type="number" id="roll" placeholder="Roll (101-199)" min="101" max="199">
+                    <button onclick="markAtt()">Log Attendance</button>
+                    <p id="att-out"></p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Contact Section: Secured Form -->
+        <section id="contact">
+            <h2>Secure Inquiry</h2>
+            <form>
+                <label for="client_name">Name:</label>
+                <input type="text" id="client_name" maxlength="50" required>
+                
+                <label for="budget">Project Budget (₹):</label>
+                <!-- Bound Check: Min 5000 for professional work -->
+                <input type="number" id="budget" min="5000" max="100000" required>
+                
+                <button type="button" onclick="validateForm()">Send Proposal</button>
+                <p id="form-msg"></p>
+            </form>
         </section>
     </main>
 
+    <footer>
+        <p>&copy; 2026 Rahul Sahu. Built with Zero-Failure Path.</p>
+    </footer>
+
     <script src="app.js"></script>
-    <script>
-        // Register Service Worker for 3G/Offline support
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js');
-        }
-    </script>
 </body>
 </html>

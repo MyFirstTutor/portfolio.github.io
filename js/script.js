@@ -23,7 +23,7 @@ const markAtt = () => {
     const out = document.getElementById("att-out");
 
     // Bound Check
-    if (roll < 101 || roll > 199) {
+    if (roll < 1 || roll > 15) {
         out.textContent = "Error: Invalid Roll Number.";
         return;
     }
